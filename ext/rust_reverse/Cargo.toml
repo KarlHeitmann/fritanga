@@ -5,7 +5,7 @@ autotests = true # set true if you want to use "cargo test"
 edition = "2018"
 
 [dependencies]
-rb-sys = { version = "0.9.75", path = "./../../../../crates/rb-sys", features = ["global-allocator"] }
+magnus = "0.5"
 
 [lib]
 crate-type = ["cdylib"]
