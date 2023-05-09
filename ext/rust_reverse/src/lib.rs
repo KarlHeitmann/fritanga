@@ -16,6 +16,7 @@ unsafe extern "C" fn pub_reverse(_klass: RubyValue, mut input: RubyValue) -> Rub
         .to_str()
         .unwrap();
     let reversed = ruby_string.to_string().chars().rev().collect::<String>();
+    // let reversed = String::from("JOKER");
     let reversed_cstring = CString::new(reversed).unwrap();
     let size = ruby_string.len() as c_long;
 
