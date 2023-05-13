@@ -10,7 +10,6 @@ pub fn serialize(a: Value) -> String {
         let i = i.unwrap();
         let method_name_symbol = i.try_convert::<Symbol>().unwrap();
         let data: String = a.funcall(method_name_symbol, ()).unwrap();
-        println!("response: {:?}", data);
         let method_name =  method_name_symbol.name().unwrap().to_ascii_lowercase();
         js[method_name] = serde_json::Value::String(data);
     }

@@ -11,7 +11,6 @@ gem "activesupport", rails_version
 gem "activemodel", rails_version
 gem "activerecord", rails_version, group: :test
 
-
 group :test do
   gem "faker"
 end
@@ -22,4 +21,6 @@ group :development do
   gem "rspec", "~> 3.0"
   gem "rake-compiler"
 end
+
+gem "sqlite3", "~> 1.4", group: [:development, :test]
 
