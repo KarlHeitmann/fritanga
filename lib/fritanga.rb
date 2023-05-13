@@ -9,7 +9,9 @@ rescue LoadError
   require "fritanga/fritanga"
 end
 
-module RustReverse
+require_relative "fritanga/serializer"
+
+module Fritanga
   class Error < StandardError; end
   # Your code goes here...
 end

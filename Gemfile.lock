@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rust_reverse (0.9.75)
+    fritanga (0.9.75)
 
 GEM
   remote: https://rubygems.org/
@@ -54,10 +54,10 @@ DEPENDENCIES
   activesupport (~> 6.1.0)
   byebug
   faker
+  fritanga!
   rake
   rake-compiler
   rspec (~> 3.0)
-  rust_reverse!
 
 BUNDLED WITH
    2.3.26
