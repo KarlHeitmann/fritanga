@@ -26,7 +26,7 @@ module Fritanga
   class Serializer
     def call_rust
       user_serializer = US.new
-      puts distance(user_serializer)
+      puts serialize(user_serializer)
     end
   end
 end
