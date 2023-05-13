@@ -26,7 +26,7 @@ class UserSerializer < FritangaSerializer
   end
 
   def descriptor
-
+    @descriptor
   end
 end
 
