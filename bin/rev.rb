@@ -5,6 +5,32 @@ require 'rust_reverse'
 # puts RustReverse.distance(ARGV[0])
 # puts RustReverse.send(:distance(ARGV[0]))
 #
-puts RustReverse.send(:distance, [0, 0], [3,4])
+
+class FritangaSerializer
+  attr_accessor = :descriptor
+  def initialize
+    # @descriptor
+  end
+end
+
+class UserSerializer < FritangaSerializer
+  def initialize
+    @descriptor = [:id, :name]
+  end
+  def id
+    "ID"
+  end
+
+  def name
+    "NAME"
+  end
+
+  def descriptor
+
+  end
+end
+
+user_serializer = UserSerializer.new
+puts RustReverse.send(:distance, user_serializer)
 # puts RustReverse.distance([1, 2], [1,3])
 
