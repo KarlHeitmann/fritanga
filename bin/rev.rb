@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'rust_reverse'
+require 'fritanga'
 # puts RustReverse.reverse(ARGV[0].to_i)
 # puts RustReverse.distance(ARGV[0])
 # puts RustReverse.send(:distance(ARGV[0]))

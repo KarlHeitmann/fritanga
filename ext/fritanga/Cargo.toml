@@ -1,5 +1,5 @@
 [package]
-name = "rust_reverse"
+name = "fritanga"
 version = "0.9.75"
 autotests = true # set true if you want to use "cargo test"
 edition = "2018"

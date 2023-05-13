@@ -5,4 +5,4 @@ $LOAD_PATH.unshift(File.expand_path("../../../../gem/lib", __dir__))
 require "mkmf"
 require "rb_sys/mkmf"
 
-create_rust_makefile("rust_reverse")
+create_rust_makefile("fritanga")
