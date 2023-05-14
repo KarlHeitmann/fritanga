@@ -11,6 +11,19 @@ gem "activesupport", rails_version
 gem "activemodel", rails_version
 gem "activerecord", rails_version, group: :test
 
+group :benchmarks do
+  gem "sqlite3", "~> 1.4"
+  gem "pg", ">= 0.18", "< 2.0"
+
+  gem "memory_profiler"
+  gem "ruby-prof", platforms: [:mri]
+  gem "ruby-prof-flamegraph", platforms: [:mri]
+
+  gem "benchmark-ips"
+  gem "active_model_serializers"
+  gem "terminal-table"
+end
+
 group :test do
   gem "faker"
 end
@@ -22,5 +35,5 @@ group :development do
   gem "rake-compiler"
 end
 
-gem "sqlite3", "~> 1.4", group: [:development, :test]
+# gem "sqlite3", "~> 1.4", group: [:development, :test]
 

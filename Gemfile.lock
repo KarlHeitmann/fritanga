@@ -6,6 +6,24 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    actionpack (6.1.7.3)
+      actionview (= 6.1.7.3)
+      activesupport (= 6.1.7.3)
+      rack (~> 2.0, >= 2.0.9)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.2.0)
+    actionview (6.1.7.3)
+      activesupport (= 6.1.7.3)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activemodel (6.1.7.3)
       activesupport (= 6.1.7.3)
     activerecord (6.1.7.3)
@@ -17,14 +35,37 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    benchmark-ips (2.12.0)
+    builder (3.2.4)
     byebug (11.1.3)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.2.2)
+    crass (1.0.6)
     diff-lcs (1.5.0)
+    erubi (1.12.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
+    jsonapi-renderer (0.2.2)
+    loofah (2.21.2)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.12.0)
+    memory_profiler (1.0.1)
     minitest (5.18.0)
+    nokogiri (1.14.4-x86_64-linux)
+      racc (~> 1.4)
+    pg (1.5.3)
+    racc (1.6.2)
+    rack (2.2.7)
+    rack-test (2.1.0)
+      rack (>= 1.3)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.5.0)
+      loofah (~> 2.19, >= 2.19.1)
     rake (13.0.6)
     rake-compiler (1.2.1)
       rake
@@ -41,25 +82,38 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
+    ruby-prof (0.18.0)
+    ruby-prof-flamegraph (0.3.0)
+      ruby-prof (~> 0.13)
     sqlite3 (1.6.2-x86_64-linux)
+    terminal-table (3.0.2)
+      unicode-display_width (>= 1.1.1, < 3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.4.2)
     zeitwerk (2.6.8)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers
   activemodel (~> 6.1.0)
   activerecord (~> 6.1.0)
   activesupport (~> 6.1.0)
+  benchmark-ips
   byebug
   faker
   fritanga!
+  memory_profiler
+  pg (>= 0.18, < 2.0)
   rake
   rake-compiler
   rspec (~> 3.0)
+  ruby-prof
+  ruby-prof-flamegraph
   sqlite3 (~> 1.4)
+  terminal-table
 
 BUNDLED WITH
    2.3.26
