@@ -10,26 +10,12 @@ describe Fritanga::Serializer do
     end
 
     def id
-      @object.fetch_id
+      @object.id.to_s
     end
 
     def name
-      @object.fetch_name
+      @object.name
     end
-  end
-
-  it "Basic test" do
-    class Foo
-      def fetch_id
-        "1"
-      end
-      def fetch_name
-        "John Doe"
-      end
-    end
-    fritanga_serializer = FooSerializer.new(Foo.new)
-    serialized_json = fritanga_serializer.to_json
-    expect(serialized_json).to eq '{"id":"1","name":"John Doe"}'
   end
 
   it "ActiveRecord test" do
@@ -38,7 +24,14 @@ describe Fritanga::Serializer do
     fritanga_serializer = FooSerializer.new(foo)
     serialized_json = fritanga_serializer.to_json
     expect(serialized_json).to eq '{"id":"1","name":"John Doe"}'
+  end
 
+  it "ActiveRecord array test" do
+    # foo = Foo.create(name: Faker::Lorem.word, address: Faker::Lorem.word).reload
+    10.times { Foo.create(name: "John Doe", address: "22 Acacia Avenue").reload }
+    records = Foo.all
+    fritanga_array_serializer = Fritanga::ArraySerializer.new(records, FooSerializer)
+    serialized_json = fritanga_array_serializer.to_json
+    expect(serialized_json).to eq '[{"id":"1","name":"John Doe"},{"id":"2","name":"John Doe"},{"id":"3","name":"John Doe"},{"id":"4","name":"John Doe"},{"id":"5","name":"John Doe"},{"id":"6","name":"John Doe"},{"id":"7","name":"John Doe"},{"id":"8","name":"John Doe"},{"id":"9","name":"John Doe"},{"id":"10","name":"John Doe"},{"id":"11","name":"John Doe"}]'
   end
 end
-

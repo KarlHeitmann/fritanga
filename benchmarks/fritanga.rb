@@ -64,7 +64,7 @@ def benchmark(prefix, serializer, options = {})
 
   puts posts_count
   Benchmark.run("Fritanga_ActiveRecord_#{prefix}_Posts_#{posts.count}") do
-    # Fritanga::ArraySerializer.new(posts, merged_options).to_json
+    # Fritanga::ArraySerializer.new(posts, PostFastSerializer).to_json
     # ArraySerializer.new(posts).to_json
     # posts_count.times { |i| puts i; PostFastSerializer.new(posts[i]).to_json } # TODO: Use an ArraySerializer, and catch PostFastSerializer class from options = {} argument
     posts_count.times { |i| PostFastSerializer.new(posts[i]).to_json } # TODO: Use an ArraySerializer, and catch PostFastSerializer class from options = {} argument
@@ -78,7 +78,7 @@ def benchmark(prefix, serializer, options = {})
   posts_50_count = posts_50.count
   puts posts_50_count
   Benchmark.run("Fritanga_ActiveRecord_#{prefix}_Posts_50") do
-    # Fritanga::ArraySerializer.new(posts_50, merged_options).to_json
+    # Fritanga::ArraySerializer.new(posts_50, PostFastSerializer).to_json
     # posts_50_count.times { |i| puts i; PostFastSerializer.new(posts_50[i]).to_json } # TODO: Use an ArraySerializer, and catch PostFastSerializer class from options = {} argument
     posts_50_count.times { |i| PostFastSerializer.new(posts_50[i]).to_json } # TODO: Use an ArraySerializer, and catch PostFastSerializer class from options = {} argument
   end

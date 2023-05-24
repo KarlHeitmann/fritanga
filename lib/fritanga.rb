@@ -10,6 +10,7 @@ rescue LoadError
 end
 
 require_relative "fritanga/serializer"
+require_relative "fritanga/array_serializer"
 
 module Fritanga
   class Error < StandardError; end
