@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "lib/rust_reverse/version"
+require_relative "lib/fritanga/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "rust_reverse"
+  spec.name = "fritanga"
   spec.version = RustReverse::VERSION
   spec.authors = ["Ian Ker-Seymer"]
   spec.email = ["ian.kerseymer@shopify.com"]
@@ -20,10 +20,10 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.extensions = ["ext/rust_reverse/extconf.rb"]
+  spec.extensions = ["ext/fritanga/extconf.rb"]
 
   # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "rb_sys"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

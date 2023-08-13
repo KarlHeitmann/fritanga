@@ -1,0 +1,17 @@
+[package]
+name = "fritanga"
+version = "0.9.75"
+autotests = true # set true if you want to use "cargo test"
+edition = "2018"
+
+[dependencies]
+magnus = "0.4"
+serde_json = "1.0.96"
+serde = { version = "1.0", features = ["derive"] }
+# rb-sys = { version = "0.9.75", path = "/home/karl/github/rb-sys/crates/rb-sys", features = ["global-allocator"] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+test-feature = []
